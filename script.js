@@ -19,6 +19,9 @@ function getRandomCharacter(stringOfCharacters) {
 //This function generates a random password based upon user prompts
 function generatePassword() {
 
+    //variable for the generated password
+    var generatedPassword = "";
+
     //Strings of lowercase, uppercase, numeric, and special characters
 
     var upperCaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -28,7 +31,7 @@ function generatePassword() {
 
     //Empty array of user selected characters
 
-    var requiredCharactersArray;
+    var requiredCharactersArray = [];
 
   //Prompts the user to select a number between 8-128
   var passwordLength = prompt("How many characters would you like in your password? \n(Please enter a number between 1-128)");
@@ -72,22 +75,27 @@ function generatePassword() {
     requiredCharactersArray.push(specialCharacters);
   }
 
+  console.log("Required characters array contains"+requiredCharactersArray.length);
 
+  
+  //Add a random character for a random special character type to the password
 
+  for(var i = 0; i < passwordLength; i++) {
+    
+    //random number for number of elements in requiredCharactersArray
+    var random = Math.floor(Math.random() * requiredCharactersArray.length);
 
+    console.log("Random number is "+random);
+    console.log("String at requiredCharacterArray element "+random+" is "+requiredCharactersArray[random]);
+    var randomCharacter = getRandomCharacter(requiredCharactersArray[random]);
+    console.log("Random character is "+ randomCharacter);
+    
+    generatedPassword = generatedPassword.concat(randomCharacter);
+    console.log("Generated password is "+generatedPassword);
+  }
 
-
-
-
-
-
-   
-
-
-
-
-
-  return "temporary password";
+  
+  return generatedPassword;
 }
 
 // Add event listener to generate button
