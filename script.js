@@ -10,5 +10,10 @@ function writePassword() {
 
 }
 
+//This function generates a random password based upon user prompts
+function generatePassword() {
+  return "temporary password";
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
