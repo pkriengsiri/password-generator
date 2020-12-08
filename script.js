@@ -34,7 +34,7 @@ function generatePassword() {
     var requiredCharactersArray = [];
 
   //Prompts the user to select a number between 8-128
-  var passwordLength = prompt("How many characters would you like in your password? \n(Please enter a number between 1-128)");
+  var passwordLength = prompt("How many characters would you like in your password? \n(Please enter a number between 8-128)");
 
   //Prompts the user to enter a new value if length is not between 8-128
   while(passwordLength < 8 || passwordLength > 128) {
@@ -52,7 +52,7 @@ function generatePassword() {
   }
 
   //Asks the user to confirm if uppercase characters must be included
-  var includeUpperCase =  confirm("Do you want to include lowercase characters?");
+  var includeUpperCase =  confirm("Do you want to include uppercase characters?");
   console.log("Include uppercase characters: "+includeUpperCase);
   //Add string of uppercase characters to requiredCharactersArray if prompt is true
   if(includeUpperCase) {
