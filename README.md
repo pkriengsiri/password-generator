@@ -2,19 +2,18 @@
 A simple password generator which uses modal windows to solicit the user's parameters for the password, and generates a random password based upon the user selections.
 
 ## Description
-This application generates a password of a user defined length and selected character types (uppercase, lowercase, numeric and special).  It uses prompts and confirms 
-
-Key features include
-
-### Links
+This application generates a password of a user defined length (between 8-128 characters) and selected character types (uppercase, lowercase, numeric and special). The password is generated via JavaScript code.  The script is accessed via html with a button to initiate password generation and prompts and confirms to select password parameters.   After selection, the generated password is displayed in the browser window.
 
 ## Installation
-Upload index.html, script.js, styles.css and license.txt folder to the deployed webserver.  
+Upload index.html, script.js, styles.css and license.txt to the deployed webserver.  
 
-The deployed website linked above was deployed using GitHub Pages.  The repository replicated by via fork, clone, and redeployment with GitHub Pages.
+The application shown below was deployed using GitHub Pages.  The repository can be replicated by via fork, clone, and redeployment with GitHub Pages.
+
+Link to repository: [https://github.com/pkriengsiri/password-generator](https://github.com/pkriengsiri/password-generator)
+
 
 ## Usage
-
+Link to deployed instance of the application: [https://pkriengsiri.github.io/password-generator/](https://pkriengsiri.github.io/password-generator/)
 
 
 ![screenshot of application about me page](./assets/images/app_screenshot.png)
@@ -22,7 +21,6 @@ The deployed website linked above was deployed using GitHub Pages.  The reposito
 ## Credits
 Collaborators on this project included instructional staff, TAs, and students in the Georgia Tech Coding Boot Camp Winter 2020 cohort.
 
-### References and Tutorials Utilized
 
 ## License
 
@@ -49,7 +47,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ## Badges
-
+[![GitHub issues](https://img.shields.io/github/issues/pkriengsiri/password-generator)](https://github.com/pkriengsiri/password-generator/issues)
+[![GitHub stars](https://img.shields.io/github/stars/pkriengsiri/password-generator)](https://github.com/pkriengsiri/password-generator/stargazers)
+[![GitHub license](https://img.shields.io/github/license/pkriengsiri/password-generator)](https://github.com/pkriengsiri/password-generator/blob/main/license.txt)
 
 
 ## Contributing
