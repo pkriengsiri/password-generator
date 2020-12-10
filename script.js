@@ -10,11 +10,6 @@ function writePassword() {
 
 }
 
-//This function will generate select a random character from a string of characters
-function getRandomCharacter(stringOfCharacters) {
-  var randomNumber = Math.floor(Math.random() * stringOfCharacters.length);
-  return stringOfCharacters[randomNumber];
-}
 
 //This function generates a random password based upon user prompts
 function generatePassword() {
@@ -29,9 +24,9 @@ function generatePassword() {
     var numericCharacters = "01234567890";
     var specialCharacters = "!@#$%^&*()";
 
-    //Empty array of user selected characters
+    //String of all eligible passwords based upon user selected character types
 
-    var requiredCharactersArray = [];
+    var requiredCharactersString = "";
 
   //Prompts the user to select a number between 8-128
   var passwordLength = prompt("How many characters would you like in your password? \n(Please enter a number between 8-128)");
@@ -46,52 +41,51 @@ function generatePassword() {
   //Asks the user to confirm if lowercase characters must be included
   var includeLowerCase =  confirm("Do you want to include lowercase characters?");
   console.log("Include lowercase characters: "+includeLowerCase);
-  //Add string of lowercase characters to requiredCharactersArray if prompt is true
+  //Add string of lowercase characters to requiredCharactersString if prompt is true
   if(includeLowerCase) {
-    requiredCharactersArray.push(lowerCaseCharacters);
+    requiredCharactersString = requiredCharactersString.concat(lowerCaseCharacters);
   }
 
   //Asks the user to confirm if uppercase characters must be included
   var includeUpperCase =  confirm("Do you want to include uppercase characters?");
   console.log("Include uppercase characters: "+includeUpperCase);
-  //Add string of uppercase characters to requiredCharactersArray if prompt is true
+  //Add string of uppercase characters to requiredCharactersString if prompt is true
   if(includeUpperCase) {
-    requiredCharactersArray.push(upperCaseCharacters);
+  requiredCharactersString = requiredCharactersString.concat(upperCaseCharacters);
   }
-
   //Asks the user to confirm if numbers characters must be included
   var includeNumeric =  confirm("Do you want to include numeric characters?");
   console.log("Include numeric characters: "+includeNumeric);
-  //Add string of numeric characters to requiredCharactersArray if prompt is true
+  //Add string of numeric characters to requiredCharactersString if prompt is true
   if(includeNumeric) {
-    requiredCharactersArray.push(numericCharacters);
+  requiredCharactersString = requiredCharactersString.concat(numericCharacters);
   }
 
   //Asks the user to confirm if special characters must be included
   var includeSpecial =  confirm("Do you want to include special characters?");
   console.log("Include special characters: "+includeSpecial);
-  //Add string of special characters to requiredCharactersArray if prompt is true
+  //Add string of special characters to requiredCharactersString if prompt is true
   if(includeSpecial) {
-    requiredCharactersArray.push(specialCharacters);
+  requiredCharactersString = requiredCharactersString.concat(specialCharacters);
   }
 
-  console.log("Required characters array contains"+requiredCharactersArray.length);
+  console.log("Required characters array string: "+requiredCharactersString);
 
   
   //Add a random character for a random special character type to the password
 
   for(var i = 0; i < passwordLength; i++) {
     
-    //random number for number of elements in requiredCharactersArray
-    var random = Math.floor(Math.random() * requiredCharactersArray.length);
+    //random number for number of elements in requiredCharactersString
+    var random = Math.floor(Math.random() * requiredCharactersString.length);
 
-    console.log("Random number is "+random);
-    console.log("String at requiredCharacterArray element "+random+" is "+requiredCharactersArray[random]);
-    var randomCharacter = getRandomCharacter(requiredCharactersArray[random]);
-    console.log("Random character is "+ randomCharacter);
+    console.log("Random number is :"+random);
+
+    // console.log("Random number is "+random);
+    // console.log("String at requiredCharacterArray element "+random+" is "+requiredCharactersArray[random]);
+    // console.log("Random character is "+ randomCharacter);
     
-    generatedPassword = generatedPassword.concat(randomCharacter);
-    console.log("Generated password is "+generatedPassword);
+    generatedPassword = generatedPassword.concat(requiredCharactersString.charAt(random));
   }
 
   
