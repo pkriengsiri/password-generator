@@ -2,6 +2,7 @@
 A simple password generator which uses modal windows to solicit the user's parameters for the password, and generates a random password based upon the user selections.
 
 ## Description
+This application generates a password of a user defined length and selected character types (uppercase, lowercase, numeric and special).  It uses prompts and confirms 
 
 Key features include
 

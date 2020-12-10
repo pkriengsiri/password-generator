@@ -24,7 +24,7 @@ function generatePassword() {
     var numericCharacters = "01234567890";
     var specialCharacters = "!@#$%^&*()";
 
-    //String of all eligible passwords based upon user selected character types
+    //String of all eligible characters based upon user selected character types
 
     var requiredCharactersString = "";
 
@@ -36,11 +36,10 @@ function generatePassword() {
     passwordLength = prompt("The password must be between 8 and 128 characters. \nPlease select a number between 8-128.")
   }
 
-  console.log("Password length: "+passwordLength);
+  //console.log("Password length: "+passwordLength);
 
   //Asks the user to confirm if lowercase characters must be included
   var includeLowerCase =  confirm("Do you want to include lowercase characters?");
-  console.log("Include lowercase characters: "+includeLowerCase);
   //Add string of lowercase characters to requiredCharactersString if prompt is true
   if(includeLowerCase) {
     requiredCharactersString = requiredCharactersString.concat(lowerCaseCharacters);
@@ -53,6 +52,7 @@ function generatePassword() {
   if(includeUpperCase) {
   requiredCharactersString = requiredCharactersString.concat(upperCaseCharacters);
   }
+  
   //Asks the user to confirm if numbers characters must be included
   var includeNumeric =  confirm("Do you want to include numeric characters?");
   console.log("Include numeric characters: "+includeNumeric);
@@ -70,22 +70,20 @@ function generatePassword() {
   }
 
   console.log("Required characters array string: "+requiredCharactersString);
+  console.log("Generated Password Length :"+generatedPassword.length);
+  console.log("Generated Password so far is :"+generatedPassword);
 
   
-  //Add a random character for a random special character type to the password
+  //Add a random character from the requiredCharactersString to generatedPassword for the remaining password length
 
   for(var i = 0; i < passwordLength; i++) {
     
     //random number for number of elements in requiredCharactersString
     var random = Math.floor(Math.random() * requiredCharactersString.length);
 
-    console.log("Random number is :"+random);
-
-    // console.log("Random number is "+random);
-    // console.log("String at requiredCharacterArray element "+random+" is "+requiredCharactersArray[random]);
-    // console.log("Random character is "+ randomCharacter);
     
     generatedPassword = generatedPassword.concat(requiredCharactersString.charAt(random));
+    console.log("Generated password is: "+generatedPassword);
   }
 
   
